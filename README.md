@@ -31,7 +31,7 @@ Acest depozit conține **materialele de laborator** pentru disciplina de **Intel
 
 ## Licență și autori
 
-Materialele provin de la **laboratorul cursului de IA** (formă actuală menționată în notebook-uri, de exemplu **Alexandru Sorici, 2024** pentru partea de inferență Bayes). Folosește conținutul în scop educațional, respectând politica facultății tale.
+Materialele provin de la **laboratorul cursului de IA**. Folosește conținutul în scop educațional, respectând politica facultății tale.
 
 ---
 
