@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .venv/
+
+# LAB6: binare mari locale (nu in depozit)
+LAB6/Graphviz-*/
+LAB6/*.zip
+LAB11/_sync_github.ps1
