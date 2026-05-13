@@ -1,4 +1,4 @@
-﻿.ipynb_checkpoints/
+.ipynb_checkpoints/
 __pycache__/
 *.pyc
 .venv/
@@ -7,3 +7,4 @@ __pycache__/
 LAB6/Graphviz-*/
 LAB6/*.zip
 LAB11/_sync_github.ps1
+LAB11/_github_cleanup.ps1
