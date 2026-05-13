@@ -1,0 +1,354 @@
+\n===== PAGE 1 =====\nRet,ele Bayesiene
+– Seminar –
+Creierul uman are o capacitate remarcabil˘ a de a lua decizii ˆ ın prezent,a in-
+format,iilor incerte sau incomplete. Facem predict ,ii, uneori incons,tient, despre
+evenimente din viitor sau pe care nu le putem observa direct s,i asta ne ajut˘ a s˘ a
+interact,ion˘ am atˆ at de eficient cu lumea din jur.
+Este necesar, deci, atunci cˆ and discut˘ am despre inteligent,˘ a artificial˘ a s˘ a ne
+punem problema reprezent˘ arii incertitudinii unor evenimente, fie c˘ a aceasta pro-
+vine din absent,a unor observat,ii, fie c˘ a este consecint,a unor procese aleatoare,
+nedeterministe (e.g. aruncarea unui zar). Cadrul matematic care ofer˘ a concep-
+tele utile acestei discut,ii ˆ ıl reprezint˘ a teoria probabilit˘ at,ilor. ˆIn cele ce urmeaz˘ a
+sunt reluate cˆ ateva not,iuni elementare necesare.
+1 Teoria probabilit˘ at,ilor
+1.1 Probabilitatea unui eveniment
+Fie X o variabil˘ a aleatoare care poate lua valoarea 0 sau 1 ( X este o variabil˘ a
+aleatoare discret˘ a binar˘ a). Definimprobabilitatea producerii evenimentului X =
+1 ca fiind raportul dintre num˘ arul de d˘ at,i ˆ ın care variabilaX ia valoarea 1 s,i
+num˘ arul total de experimente. Vom nota aceast˘ a probabilitate astfel:p (X = 1).
+Prin definit,ie orice probabilitate este un num˘ ar ˆ ıntre 0 s,i 1.
+Pentru simplificare vom nota ˆ ın continuare cup (X) probabilitatea unui eve-
+niment oarecare X.
+Dac˘ ap (X) = 1 atunci X este un eveniment sigur (e.g. X = 0 ∨ X = 1).
+Dac˘ ap (X) = 0 atunci X este un eveniment imposibil.
+Vom nota cu ¬X evenimentul contrar (sau complementar) evenimentului X.
+p (X) = 1 − p (¬X) (1)
+1.2 Evenimente independente. Probabilit˘ at,i condit,ionate
+Evenimente independente
+Dou˘ a evenimenteX s,i Y se numesc independente dac˘ a probabilitatea evenimen-
+tului combinat X ∩ Y este produsul probabilit˘ at,ilor individuale de producere a
+celor dou˘ a evenimente (vezi Formula 2). Vom nota fapul c˘ a dou˘ a evenimente
+sunt independente astfel: X ⊥ Y . O observat,ie important˘ a este aceea c˘ a dac˘ a
+1\n===== PAGE 2 =====\nN evenimente sunt independente dou˘ a cˆ ate dou˘ a, acestea nu sunt necesar inde-
+pendente ˆ ın ansamblu.
+p (X ∩ Y ) = p (X) · p (Y ) (2)
+Dou˘ a evenimenteX s,i Y se numesc incompatibile dac˘ a acestea nu se pot
+produce simultan: p (X ∩ Y ) = 0.
+Probabilit˘ at,i condit,ionate
+Fie X s,i Y dou˘ a evenimente s,i p (Y ) ̸= 0. Probabilitatea lui X condit,ionat de
+Y este dat˘ a de raportul dintre probabilitatea evenimentului combinat s,i proba-
+bilitatea evenimentului Y (vezi Formula 3). Intuitiv, aceasta descrie s,ansele de
+a se produce evenimentul X atunci cˆ and evenimentulY s-a realizat.
+p (X|Y ) = p (X ∩ Y )
+p (Y ) (3)
+Formula 3 poate fi aplicat˘ a succesiv pentru adesf˘ as,ura probabilitatea unui
+eveniment combinat din N evenimente (vezi Formula 4).
+p (X1 ∩ X2 ∩ . . . ∩ XN) = p (X1) p (X2 ∩ . . . ∩ XN |X1)
+= p (X1) p (X2|X1) p (X3 ∩ . . . ∩ XN |X1 ∩ X2)
+· · ·
+= p (X1) p (X2|X1) . . . p(XN |X1 ∩ X2 ∩ . . . ∩ XN −1)
+(4)
+Dac˘ a un eveniment sigurY se poate descompuneˆ ınN evenimente incompati-
+bile Y1, Y2, . . . , YN, atunci pentru orice evenimentX este adev˘ arat˘ a identitatea 5
+(forumla probabilit˘ at,ii totale).
+p (X) =
+NX
+n=1
+p (X|Yn) p (Yn) =
+NX
+n=1
+p (X ∩ Yn) (5)
+O aplicat,ie uzual˘ a a acestei reguli este descompunerea evenimentului sigur
+ˆ ınY s,i ¬Y (Formula 6).
+p (X) = p (X|Y ) p (Y ) + p (X|¬Y ) p (¬Y ) (6)
+Exemplu S˘ a presupunem c˘ a un agent vrea s˘ a ˆ ıs,i evalueze s,ansele de a cˆ as,tiga
+un joc cu zar. Fie C evenimentul ˆ ın care agentul cˆ as,tig˘ a jocul. Presupunˆ and
+c˘ a agentul cunoas,te probabilitatea ca zarul s˘ a pice pe fiecare dintre cele s ,ase
+fet,e ale sale p (Z = i) , ∀i ∈ {1, . . . ,6}, acesta trebuie s˘ a evalueze apoi care sunt
+s,ansele de a cˆ as,tiga ˆ ın fiecare dintre acele cazurip (C|Z = i). Atunci, s,ansele ca
+agentul s˘ a cˆ as,tige jocul sunt date de cantitea urm˘ atoare (Formula 7):
+2\n===== PAGE 3 =====\np (C) =
+6X
+i=1
+p (C|Z = i) · p (Z = i) (7)
+1.3 Teorema lui Bayes
+Pentru dou˘ a evenimenteX s,i Y , aplicˆ and Formula 5 s,i t,inˆ and cont de simetria
+p (X ∩ Y ) = p (Y ∩ X) se obt,ine Teorema lui Bayes:
+p (X|Y ) = p (Y |X) p (X)
+p (Y ) (8)
+Teorema lui Bayes paote fi interpretat˘ a ca o condit,ionare cauzal˘ a. Frumuse-
+t,ea acestei formule vine din faptul c˘ a exprim˘ a probabilitatea unei cauze pe baza
+unei observat,ii f˘ acute, ˆ ıntorcˆ and direct,ia de condit,ionare. Probabilitatea pos-
+terioar˘ ap (X|Y ) este exprimat˘ a ca produsul dintre verosimilitatea observat,iei
+f˘ acute dat˘ a fiind cauzaX, p (Y |X), s,i probabilitatea aprioric˘ a a cauzei p (X)
+ˆ ımp˘ art,it la probabilitatea total˘ a a evenimentuluiY .
+O aplicat,ie uzual˘ a a Teoremei lui Bayes este aplicarea ˆ ın cazul evenimentelor
+complementare precum ˆ ın Formula 9.
+p (X|Y ) = p (Y |X) p (X)
+p (Y |X) p (X) + p (Y |¬X) p (¬X) (9)
+Exemplu
+Se consider˘ a o anume form˘ a de gripa ce afecteaz˘ a un procent cunoscut din
+populat,ie (1%) s,i un test ce semnaleaz˘ a cu o anumit˘ a certitudine prezent,a acestei
+boli. Mai precis, se cunosc urm˘ atoarele probabilit˘ at,i:
+ p (Gripa) = 0.01 - incident,a acestei forme de gripa ete 1%;
+ p (+|Gripa) = 0.9 - probabilitatea ca testul s˘ a indice corect prezent,a gripei
+ˆ ın cazul unui pacient bolnav;
+ p (+|¬Gripa) = 0 .2 - probabilitatea ca testul s˘ a indice gres ,it prezent,a
+gripei ˆ ın cazul unui pacient s˘ an˘ atos.
+S˘ a not˘ am s,i probabilit˘ at,ile evenimentelor complementare:
+ p (¬Gripa) = 0.99 - probabilitatea evenimentului complementar (indivizii
+s˘ an˘ atos,i din rˆ andul populat,iei);
+ p (−|Gripa) = 0.1 - probabilitatea ca testul s˘ a NU indice prezent,a gripei
+ˆ ın cazul unui pacient bolnav (negativ fals);
+ p (−|¬Gripa) = 0.8 - probabilitatea ca testul s˘ a ias˘ a negativ ˆ ın cazul unui
+individ s˘ an˘ atos.
+3\n===== PAGE 4 =====\nAplicˆ and teorema lui Bayes putem afla care este probabilitatea ca un individ
+s˘ a fie bolnav dac˘ a testul a ies,it pozitiv:
+p (Gripa|+) = p (+|Gripa) p (Gripa)
+p (+)
+= p (+|Gripa) p (Gripa)
+p (+|Gripa) p (Gripa) + p (+|¬Gripa) p (¬Gripa)
+= 0.9 · 0.01
+0.9 + 0.01 + 0.2 · 0.99 ≈ 0.04348
+(10)
+Artificiu de calcul Uneori, ˆ ın teorema lui Bayes numitorul este greu de cal-
+culat. Se poate evita acest calcul direct folosindu-se evenimentul complementar.
+p (X|Y ) = p (Y |X) p (X)
+p (Y )
+not.
+= P 1
+γ (11)
+p (¬X|Y ) = p (Y |¬X) p (¬X)
+p (Y )
+not.
+= P 2
+γ (12)
+Calculˆ andu-se doar num˘ ar˘ atorii din Ecuat,iile 11 s,i 12, se rezolv˘ a apoi urm˘ atorul
+sistem de ecuat,ii:
+γP 1 + γP 2 = 1 (13)
+p (X|Y ) = γP 1 (14)
+2 Ret ,ele Bayesiene
+Ret,elele Bayesiene sunt modele grafice utilizate pentru reprezentarea eficient˘ a a
+unor distribut,ii comune peste un spat,iu mai mare de variabile aleatoare. Ret,elele
+Bayesiene sunt grafuri orientate aciclice ˆ ın care nodurile reprezint˘ a variabile
+aleatoare, iar arcele reprezint˘ a relat,ii cauzale directe ˆ ıntre acestea.
+Ret,ele Bayesiene pot lucra s ,i cu variabile continue, dar ˆ ın cadrul acestei
+expuneri ne vom referi doar la ret ,ele ce descriu probabilit˘ at,i pentru variabile
+discrete.
+Figura 1 reprezint˘ a o ret,ea bayesian˘ a cu dou˘ a variabile binare:A s,i B. Pentru
+a simplifica notat,iile vom considera evenimentele A ≡ A = 1 s,i ¬A ≡ A = 0
+notˆ and, deci,p (A) = p (A = 1) s,i probabilitatea evenimentului complementar
+p (¬A) = p (A = 0). Convent,ia este folosit˘ a pentru toate variabilele binareB, C,
+D, etc. ce vor ap˘ area mai jos.
+4\n===== PAGE 5 =====\nA
+B
+p (A) · · ·
+p (B|A) · · ·
+p (B|¬A) · · ·
+Figura 1: Ret,ea Bayesian˘ a simpl˘ a
+Fiecare nod dintr-o ret,ea bayesian˘ a este ˆ ınsot,it de o tabel˘ a de probabilit˘ at,i
+condit,ionate care descriu s,ansele ca variabila respectiv˘ a s˘ a ia o valoare atunci
+cˆ and variabilele p˘ arinte (cauzele) au fost observate. Pentru o variabil˘ a care nu
+are p˘ arint,i (cauze), probabilit˘ at,ile de realizare ale acesteia nu vor fi condit,ionate.
+Mai precis, pentru ret ,eaua bayesian˘ a din Figura 1 trebuie precizate p (A),
+p (B|A) s,i p (B|¬A).
+ˆIn cazul general, ˆ ın care fiecare variabil˘ aX poate lua valori dintr-o mult,ime
+de valori D(X), num˘ arul de valori ce trebuie specificate pentru un nod oarecare
+este ( |D (X)| − 1) Q
+Y∈P ar(X) |D (Y)|, unde |M | este cardinalul mult ,imii M, iar
+P ar(X) reprezint˘ a mult,imea p˘ arint,ilor (cauzelor) variabilei X.
+ˆIntrebarea 1 Fie mult,imea de variabile aleatoare binare {A, B, C, D, E, F, G}.
+Cˆ ate valori ar trebui specificate (sau ˆ ınv˘ at,ate ˆ ıntr-un proces de antrenare) pen-
+tru a descrie probabilitatea comun˘ ap (A, B, C, D, E, F, G)? Cˆ ate valori trebuie spe-
+cificate pentru a descrie ret,eaua bayesian˘ a din Figura 2? R˘ aspundet,i la aceleas,i
+dou˘ a ˆ ıntreb˘ ari considerˆ and c˘ a variabilele sunt ternare (pot lua trei valori).
+5\n===== PAGE 6 =====\nA B C
+D E
+F G
+Figura 2: Ret,ea Bayesian˘ a pentru ˆ ıntrebarea 1
+2.1 Independent ,˘ a condit,ional˘ a
+Unul dintre conceptele cheie din teoria probabilit˘ at,ilor care face ca lucrul cu
+ret,elele bayesiane s˘ a fie eficient esteindependent,a condit,ional˘ a. Dac˘ a observarea
+unei variabile Y face ca variabila X s˘ a nu depind˘ a de o a treia variabil˘ aZ atunci
+spunem c˘ aX este condit,ional independent˘ a deZ dat˘ a fiindY. Intuitiv, aceast˘ a
+relat,ie indic˘ a faptul c˘ a atunci cˆ and rezultatul luiY este cunoscut, observarea
+lui Z nu ar aduce nicio informat ,ie suplimentar˘ a despreX (sau, echivalent, nu
+ar modifica (in)certitudinea asupra variabilei X). Una dintre notat ,iile uzuale
+pentru independent,a condit,ional˘ a este cea din Formula 15.
+X ⊥ Z|Y ⇐ ⇒ p (X|Y, Z) = p (X|Y) (15)
+Relat,ia de independent,˘ a condit,ional˘ a se generalizeaz˘ a s,i la mult,imi de vari-
+abile. ˆIn Formula 16, X, Y s,i Z reprezint˘ a mult,imi de variabile aleatoare.
+X ⊥ Z|Y ⇐ ⇒ p (X|Y, Z) = p (X|Y) (16)
+Pentru a putea investiga aplicat,iile independent,ei condit,ionale ˆ ın ret,ele ba-
+yesiene, mai jos sunt descrise trei posibile relat,ii ˆ ın care se pot g˘ asi trei variabile
+aleatoare.
+Lant, de cauzalitate Fie ret,eaua bayesian˘ a din Figura 3 cu trei variabileA,
+B s,i C. S˘ a presupunem c˘ a aceasta modeleaz˘ a urm˘ atoarea situat,ie: variabila A
+reprezint˘ a faptul c˘ a este iarn˘ a, variabilaB starea de a ninge afar˘ a, iar variabila
+C faptul c˘ a Ionut, se d˘ a cu sania. ˆIn primul caz s˘ a presupunem c˘ a nu s,tim
+dac˘ a afar˘ a ninge sau nu. Informat,ia despre anotimpul curent (dac˘ a este iarn˘ a
+sau nu, adic˘ a observarea variabileiA) modific˘ a ceea ce credem despre faptul c˘ a
+Ionut, se d˘ a cu sania. Mai precis, ˆ ıntr-un alt anotimp decˆ at iarna, acest lucru ar
+p˘ area improbabil, deoarce este foarte put,in probabil s˘ a ning˘ a. Iarna, ˆ ın schimb,
+putem crede c˘ a sunt s,anse mari s˘ a ning˘ a, drept urmare sunt s,anse mai mari ca
+6\n===== PAGE 7 =====\nIonut, s˘ a se dea cu sania. Dar, odat˘ a ce afl˘ am dac˘ a ninge sau nu, informat,ia
+despre anotimpul curent nu mai poate influent ,a s,ansele pe care le acord˘ am
+evenimentului Ionut, se d˘ a cu sania.ˆIn acest caz, deci, A ⊥ C|B s,i A ̸⊥ C.
+A B C
+(a) A ̸⊥ C
+A B C
+(b) A ⊥ C|B
+Figura 3: Variabilele A s,i B devin condit,ional independente atunci cˆ and variabila
+C este observat˘ a (imaginea b).
+Cauz˘ a comun˘ aFie ret,eaua bayesian˘ a din Figura 4.ˆIn acest caz variabila B
+condit,ioneaz˘ a atˆ at variabilaA, cˆ at s,i variabila C. S˘ a asociem trei evenimente
+concrete celor trei variabile: evenimentul plou˘ aeste descris de variabila binar˘ a
+B, variabila A reprezint˘ a faptul c˘ a oras,ul Bucures,ti este aglomerat, iar variabila
+C faptul c˘ a Ionut, poart˘ a o umbrel˘ a. Exact ca ˆ ın cazul precedent, s˘ a presupunem
+ˆ ıntˆ ai c˘ a nu s,tim dac˘ a afar˘ a plou˘ a. Faptul c˘ a ˆ ıl vedem pe Ionut, cu o umbrel˘ a
+ne poate face mai ˆ ıncrez˘ atori ˆ ın faptul c˘ a traficul este aglomerat deoarece este
+foarte probabil s˘ a plou˘ a. Totus,i, observˆ and dac˘ a afar˘ a plou˘ a sau nu, umbrela
+lui Ionut, nu ne mai aduce nicio informat ,ie despre traficul din Bucures,ti. Deci,
+ˆ ın acest cazA ⊥ C|B s,i A ̸⊥ C.
+B
+A C
+(a) A ̸⊥ C
+B
+A C
+(b) A ⊥ C|B
+Figura 4: Variabilele A s,i B devin condit,ional independente atunci cˆ and variabila
+C este observat˘ a (imaginea b).
+7\n===== PAGE 8 =====\nA
+B
+C
+(a) A ⊥ C
+A
+B
+C
+(b) A ̸⊥ C|B
+A C
+B
+(c) A ̸⊥ C|B
+Figura 5: Variabilele A s,i B sunt condit,ional independente atunci cˆ and variabila
+C nu este observat˘ a (imaginea a), dar depind una de cealalt˘ a dup˘ a observarea
+unui copil comun (imaginea b) sau a unui descendent al acestuia (imaginea c).
+Explaining away Fie ret,eaua bayesian˘ a din Figura 5.ˆIn acest caz: A ̸⊥ C|B
+s,i A ⊥ C. S˘ a ˆ ıncerc˘ am s˘ a suprapunem un exemplu. Ionut, este microbist s,i echipa
+lui preferat˘ a este Barcelona care are un meci important cu rivala din Madrid.
+De asemenea, Ionut, este programator s,i as,teapt˘ a verdictul unui interviu pe care
+l-a avut de curˆ and. S˘ a zicem c˘ a variabilaA corespunde evenimentului Barcelona
+a cˆ as,tigat meciul cu Real Madrid , iar variabila C reprezint˘ a evenimentulIonut,
+a luat interviul . F˘ ar˘ a nicio informat,ie suplimentar˘ a cele dou˘ a evenimente nu au
+nicio leg˘ atur˘ a s,i informat,ii despre unul dintre ele nu ne pot schimba probabili-
+tatea pe care o asociem celuilalt. Dac˘ a, ˆ ın schimb, observ˘ am variabilaB s,i afl˘ am
+c˘ a Ionut, este fericit, atunci apare nevoia unei explicat,ii. De ce este Ionut, fericit?
+ˆIn cazul acesta, dac˘ a afl˘ am c˘ a rezultatul meciului a fost negativ, din nevoia de
+oferi o explicat,ie pentru bucuria lui Ionut ,, vom avea o certitudine ridicat˘ a c˘ a
+acesta a luat interviul. Variabilele de care depinde B devin dependente deoarece
+se activeaz˘ a un rat,ionament intercauzal ˆ ın c˘ autarea unei explicat,ii.
+2.2 D-Separabilitate
+Not,iunea de D-separabilitate foloses,te o analiz˘ a a grafului care descrie ret,eaua
+bayesian˘ a pentru a determina dac˘ a dou˘ a mult,imi de variabile sunt independente
+condit,ional sau nu.
+O cale neorientat˘ aˆ ıntre o mult,ime de noduri X s,i o mult,ime de noduri Z
+este orice secvent,˘ a de arce (indiferent de orientarea lor) care pleac˘ a de la un
+membru al mult,imii X s,i ajunge la un membru al mult ,imii Z.
+8\n===== PAGE 9 =====\nDˆ andu-se o mult,ime de noduri O observate, o cale p este blocat˘ adac˘ a una
+dintre urm˘ atoarele trei condit,ii este adev˘ arat˘ a:
+1. exist˘ a un nodY ∈ O care reprezint˘ a destinat,ia unui arc din p s,i sursa unui
+alt arc din p (ˆ ınl˘ ant,uire cauzal˘ a);
+2. exist˘ a un nodY ∈ O care reprezint˘ a sursa a dou˘ a arce diferite dinp (cauz˘ a
+comun˘ a);
+3. niciun nod Y care reprezint˘ a destinat,ia a dou˘ a arce dinp nu se afl˘ a ˆ ınO
+s,i nici vreun descendent de-ai lui nu se afl˘ a ˆ ınO.
+O mult,ime de noduri O d-separ˘ adou˘ a mult,imi X s,i Z dac˘ a orice cal˘ a neo-
+rientat˘ a ˆ ıntreX s,i Z este blocat˘ a prin observarea variabilelor dinO.
+3 Exemplu s ,i probleme
+A B C
+D E
+F G
+Figura 6: Ret,ea bayesian˘ a ˆ ıntrebarea 2.
+Fie ret,eaua bayesian˘ a din Figura 6.
+ˆIntrebarea 2. De cˆ at,i parametri este nevoie pentru a descrie complet ret,eaua
+bayesian˘ a din Figura 6? De cˆ at,i ar fi fost nevoie ˆ ıntr-o reprezentare tabular˘ a
+complet˘ a ap (A, B, C, D, E, F, G)?
+ˆIntrebarea 3. Precizat,i care dintre urm˘ atoarele relat,ii de independent,˘ a condit,ional˘ a
+sunt adev˘ arate ˆ ın ret,eaua din Figura 6. Analizat ,i folosind definit,ia pentru d-
+separabilitate.
+a) A ⊥ G|D
+b) A ⊥ B|F
+c) A ⊥ C
+9\n===== PAGE 10 =====\nd) A ⊥ C|E
+e) F ⊥ G|A
+f) B ⊥ C|G
+g) F ⊥ C|G
+A B C
+D E
+F G
+(a) ˆIntrebarea 3.a.
+A B C
+D E
+F G
+(b) ˆIntrebarea 3.b.
+Figura 7: ˆIn imaginea a variabilele A s,i G sunt condit,ional independente prin
+observarea variabilei D deoarece singura cale dintre acestea este blocat˘ a.ˆIn ima-
+ginea b variabilele A s,i B sunt dependente deoarece observarea unui descendent
+al variabilei D activeaz˘ a caleaA − D − B.
+ˆIntrebarea 4. Considerˆ and doar variabilele D, F, G, precum ˆ ın Figura 8,
+calculat,i urm˘ atoarele probabilit˘ at,i:
+a) p (D|F ∩ G)
+b) p (F |G)
+D
+F G
+p (D) 0.7
+p (G|D) 0.25
+p (G|¬D) 0.65
+p (F |D) 0.8
+p (F |¬D) 0.5
+Figura 8: Ret,ea bayesian˘ a pentru ˆ ıntrebarea 4.
+10\n===== PAGE 11 =====\nˆIntrebarea 5. Considerˆ and doar variabilele D, E, G, precum ˆ ın Figura 9,
+calculat,i urm˘ atoarele probabilit˘ at,i :
+a) p (D|E)
+b) p (D|G ∩ E)
+D E
+G
+p (E) 0.25
+p (G|D ∩ E) 0.9
+p (G|D ∩ ¬E) 0.8
+p (G|¬D ∩ E) 0.6
+p (G|¬D ∩ ¬E) 0.2
+p (D) 0.7
+Figura 9: Ret,ea bayesian˘ a pentru ˆ ıntrebarea 5.
+Indiciu pentru ˆ ıntrebarea 5.b Putem descompune p (X, Y, Z) folosind For-
+mula 4 ˆ ın dou˘ a moduri:
+p (X, Y, Z) = p (X) p (Y|X) p (Z|Y ∩ X) (17)
+p (X, Y, Z) = p (X) p (Z|X) p (Y|Z ∩ X) (18)
+Din Formulele 17 s,i 18 se obt ,ine urm˘ atoarea egalitate (o expresie similar˘ a
+Formulei lui Bayes ˆ ın care toate probabilit˘ at,ile sunt condit,ionate de o alt˘ a va-
+riabil˘ a):
+p (Y|X) p (Z|Y ∩ X) = p (Z|X) p (Y|Z ∩ X) (19)
+ˆIntrebarea 6. Urm˘ arind ret,eaua bayesian˘ a din Figura 10, calculat,i urm˘ atoarele
+probabilit˘ at,i:
+a) p (B|F )
+b) p (A|¬F ∩ ¬G)
+c) p (B|¬C)
+11\n===== PAGE 12 =====\nA B C
+D E
+F G
+p (A) 0.6
+p (D|A ∩ B) 0.9
+p (D|A ∩ ¬B) 0.6
+p (D|¬A ∩ B) 0.6
+p (D|¬A ∩ ¬B) 0.05
+p (F |D) 0.8
+p (F |¬D) 0.5
+p (C) 0.1
+p (E|C) 0.7
+p (E|¬C) 0.2
+p (G|D ∩ E) 0.9
+p (G|D ∩ ¬E) 0.8
+p (G|¬D ∩ E) 0.6
+p (G|¬D ∩ ¬E) 0.2
+p (B) 0.8
+Figura 10: Ret,ea bayesian˘ a cu 7 noduri pentru ˆ ıntrebarea 6.
+12
