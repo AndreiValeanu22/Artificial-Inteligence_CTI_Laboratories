@@ -31,8 +31,7 @@ Acest depozit conține **materialele de laborator** pentru disciplina de **Intel
 
 ## Licență și autori
 
-Materialele provin de la **laboratorul cursului de IA**. Folosește conținutul în scop educațional, respectând politica facultății tale.
-
+Materialele provin de la **laboratorul cursului de IA**.
 ---
 
 *Ultima actualizare agregată a structurii depozitului: mai 2026.*
